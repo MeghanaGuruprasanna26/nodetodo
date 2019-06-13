@@ -8,8 +8,8 @@ chai.use(chaiHttp);
 chai.should();
 describe("todos", () => {
     describe("GET /", () => {
-        // Test to get all students record
-        it("Get all todos of user 'test'", (done) => {
+        // Test to get all todos of a user
+        it("Positive test: Get all todos of user 'test'", (done) => {
              chai.request(app)
                  .get('/api/todos/test')
                  .end((err, res) => {
@@ -20,7 +20,7 @@ describe("todos", () => {
          });
         
         // Test to get single student record
-        it("Add a todo for user 'test'", (done) => {
+        it("Positive test: Add a todo for user 'test'", (done) => {
              chai.request(app)
                 .post('/api/todo')
                 .send({
@@ -38,6 +38,72 @@ describe("todos", () => {
                      done();
                 });
          });
+
+
+
+         it("Negative test: check if the server returns error when username is missing", (done) => {
+            chai.request(app)
+               .post('/api/todo')
+               .send({
+                   
+                   "todo": "Pay rent",
+                   "isDone": true,
+                   "hasAttachment": false,
+                   "tags": [
+                    "personal"
+                       ]
+               })
+               
+               .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+               });
+        });
+
+
+
+
+        it("Negative test: check if the server returns error when todo string is shorter than expected ", (done) => {
+            chai.request(app)
+               .post('/api/todo')
+               .send({
+                   
+                   "username": "test",
+                   "todo": "Pay",
+                   "isDone": true,
+                   "hasAttachment": false,
+                   "tags": [
+                    "Personal"
+                       ]
+               })
+               
+               .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+               });
+        });
+
+
+        it("Negative test: check if the server returns error when username exceeds 15 characters", (done) => {
+            chai.request(app)
+               .post('/api/todo')
+               .send({
+                   
+                   "username": "testtesttesttests",
+                   "todo": "Pay rent",
+                   "isDone": true,
+                   "hasAttachment": false,
+                   "tags": [
+                    "personal"
+                       ]
+               })
+               
+               .end((err, res) => {
+                    res.should.have.status(404);
+                    done();
+               });
+        });
+
          /*
         // Test to get single student record
         it("should not get a single student record", (done) => {

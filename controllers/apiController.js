@@ -59,8 +59,9 @@ module.exports = function(app) {
            });
            newTodo.save(function(err) {
               if (err){
-                  console.log(err.message);
-                  res.send('Failure');
+                return res.status(404).json({
+                    message: "Failure"
+              });
               } else {
                 return res.status(200).json({
                     message: "Success"
