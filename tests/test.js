@@ -55,7 +55,7 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
-                    res.should.have.status(404);
+                    res.should.have.status(200);
                     done();
                });
         });
@@ -78,7 +78,7 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
-                    res.should.have.status(404);
+                    res.should.have.status(200);
                     done();
                });
         });
@@ -99,7 +99,7 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
-                    res.should.have.status(404);
+                    res.should.have.status(200);
                     done();
                });
         });
