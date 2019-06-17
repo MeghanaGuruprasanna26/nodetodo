@@ -46,7 +46,7 @@ describe("todos", () => {
                .post('/api/todo')
                .send({
                    
-                   "todo": "Pay electricity bill",
+                   "todo": "Pay car bill",
                    "isDone": true,
                    "hasAttachment": false,
                    "tags": [
@@ -90,7 +90,7 @@ describe("todos", () => {
                .send({
                    
                    "username": "testtesttesttests",
-                   "todo": "Collect amazon parcel",
+                   "todo": "Collect amazon order",
                    "isDone": true,
                    "hasAttachment": false,
                    "tags": [
