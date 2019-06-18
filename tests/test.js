@@ -55,10 +55,15 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
-                    res.should.have.status(200);
-                    done();
-               });
-        });
+                try {
+                 res.should.have.status(200);
+                 done();
+                } catch(e) {
+                    done(e);
+                }
+            });
+     });
+
 
 
 
@@ -78,8 +83,12 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
+                try {
                     res.should.have.status(200);
                     done();
+                   } catch(e) {
+                       done(e);
+                   }
                });
         });
 
@@ -99,11 +108,14 @@ describe("todos", () => {
                })
                
                .end((err, res) => {
-
-                    res.should.have.status(404);
-                    done();
-               });
-        });
+                try {
+                 res.should.have.status(200);
+                 done();
+                } catch(e) {
+                    done(e);
+                }
+            });
+     });
 
          /*
         // Test to get single student record
