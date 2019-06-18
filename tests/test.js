@@ -10,35 +10,34 @@ describe("todos", () => {
     describe("GET /", () => {
         // Test to get all todos of a user
         it("Positive test: Get all todos of user 'test'", (done) => {
-             chai.request(app)
-                 .get('/api/todos/test')
-                 .end((err, res) => {
-                     res.should.have.status(200);
-                     res.body.should.be.a('object');
-                     done();
-                  });
-         });
-        
-        // Test to get single student record
-        it("Positive test: Add a todo for user 'test'", (done) => {
-             chai.request(app)
-                .post('/api/todo')
-                .send({
-                    "username": "test",
-                    "todo": "Pay rent",
-                    "isDone": true,
-                    "hasAttachment": false,
-                    "tags": [
-                     "personal"
-                        ]
-                })
-                
+            chai.request(app)
+                .get('/api/todos/test')
                 .end((err, res) => {
-                     res.should.have.status(200);
-                     done();
-                });
-         });
-
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                 });
+        });
+       
+       // Test to get single student record
+       it("Positive test: Add a todo for user 'test'", (done) => {
+            chai.request(app)
+               .post('/api/todo')
+               .send({
+                   "username": "test",
+                   "todo": "Pay rent",
+                   "isDone": true,
+                   "hasAttachment": false,
+                   "tags": [
+                    "personal"
+                       ]
+               })
+               
+               .end((err, res) => {
+                    res.should.have.status(200);
+                    done();
+               });
+        });
 
 
          it("Negative test: check if the server returns error when username is missing", (done) => {
