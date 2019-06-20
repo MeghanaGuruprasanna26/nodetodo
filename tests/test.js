@@ -97,7 +97,7 @@ describe("todos", () => {
                .post('/api/todo')
                .send({
                    
-                   "username": "testtesttesttestrrrrrrrwrws",
+                   "username": "testtesttesttestrrrrrrrwrwsnmn",
                    "todo": "Collect amazon order",
                    "isDone": true,
                    "hasAttachment": false,
