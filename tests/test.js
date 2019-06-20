@@ -71,7 +71,7 @@ describe("todos", () => {
             chai.request(app)
                .post('/api/todo')
                .send({
-                   
+            
                    "username": "test",
                    "todo": "Pay",
                    "isDone": true,
