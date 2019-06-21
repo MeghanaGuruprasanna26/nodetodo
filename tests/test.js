@@ -98,7 +98,7 @@ describe("todos", () => {
                .send({
                    
                    "username": "testtesttesttestrrrrrrrwrws",
-                   "todo": "Collect amazon orders i have",
+                   "todo": "Collect amazon orders ",
                    "isDone": true,
                    "hasAttachment": false,
                    "tags": [
