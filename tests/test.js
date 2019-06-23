@@ -92,7 +92,7 @@ describe("todos", () => {
         });
 
 
-        it("Negative test: check if the server returns error when username exceeds 15 characters", (done) => {
+        it("Negative test:check if the server returns error when username exceeds 15 characters", (done) => {
             chai.request(app)
                .post('/api/todo')
                .send({
