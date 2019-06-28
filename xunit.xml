@@ -1,14 +1,33 @@
 <testExecutions version="1">
-  <file path="tests/test.js">
-    <testCase name="test1" duration="5"/>
-    <testCase name="test2" duration="500">
-      <skipped message="short message">other</skipped>
-    </testCase>
-    <testCase name="test3" duration="100">
-      <failure message="short">stacktrace</failure>
-    </testCase>
-    <testCase name="test4" duration="500">
-      <error message="short">stacktrace</error>
-    </testCase>
-  </file>
+<file path="tests\test.js">
+<testCase name="GET /: Positive test: Get all todos of user &apos;test&apos;" duration="688"/>
+<testCase name="GET /: Positive test: Add a todo for user &apos;test&apos;" duration="253"/>
+<testCase name="GET /: Negative test: check if the server returns error when username is missing" duration="72">
+<failure message="expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404
+    at E:/job/git/nodetodo/tests/test.js:58:34
+    at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+    at parser (node_modules\superagent\lib\node\index.js:916:18)
+    at IncomingMessage.res.on (node_modules\superagent\lib\node\parsers\json.js:19:7)
+    at endReadableNT (_stream_readable.js:1129:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)]]></failure>
+</testCase>
+<testCase name="GET /: Negative test: check if the server returns error when todo string is shorter than expected " duration="50">
+<failure message="expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404
+    at E:/job/git/nodetodo/tests/test.js:86:37
+    at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+    at parser (node_modules\superagent\lib\node\index.js:916:18)
+    at IncomingMessage.res.on (node_modules\superagent\lib\node\parsers\json.js:19:7)
+    at endReadableNT (_stream_readable.js:1129:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)]]></failure>
+</testCase>
+<testCase name="GET /: Negative test:check if the server returns error when username exceeds 15 characters" duration="82">
+<failure message="expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404"><![CDATA[AssertionError: expected { Object (_events, _eventsCount, ...) } to have status code 200 but got 404
+    at E:/job/git/nodetodo/tests/test.js:111:34
+    at Test.Request.callback (node_modules\superagent\lib\node\index.js:716:12)
+    at parser (node_modules\superagent\lib\node\index.js:916:18)
+    at IncomingMessage.res.on (node_modules\superagent\lib\node\parsers\json.js:19:7)
+    at endReadableNT (_stream_readable.js:1129:12)
+    at process._tickCallback (internal/process/next_tick.js:63:19)]]></failure>
+</testCase>
+</file>
 </testExecutions>
