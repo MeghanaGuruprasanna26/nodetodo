@@ -1,6 +1,6 @@
 {
   "name": "node-todo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -23,10 +23,9 @@
     "mongoose": "^4.13.18"
   },
   "devDependencies": {
-    "@danmasta/mocha-sonar": "0.0.6",
     "mocha-sonarqube-reporter": "^1.0.1"
   },
-  "publishConfig" : {
+  "publishConfig": {
     "registery": "http://localhost:8081/nexus/content/repositories/npm_ptivate/"
   }
 }
