@@ -1,10 +1,10 @@
 {
   "name": "node-todo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter mocha-sonarqube-reporter --require babel-register tests/*.js output=xunit.xml --exit",
+    "test": "mocha --reporter mocha-junit-reporter --require babel-register tests/*.js --exit",
     "dev": "nodemon --exec babel-node  --presets babel-preset-env ./app.js"
   },
   "author": "",
@@ -22,10 +22,10 @@
     "mongodb": "^3.2.7",
     "mongoose": "^4.13.18"
   },
-  "devDependencies": {
-    "mocha-sonarqube-reporter": "^1.0.1"
-  },
   "publishConfig": {
     "registery": "http://localhost:8081/nexus/content/repositories/npm_ptivate/"
+  },
+  "devDependencies": {
+    "mocha-junit-reporter": "^1.23.0"
   }
 }
