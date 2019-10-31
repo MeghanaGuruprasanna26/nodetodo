@@ -20,7 +20,7 @@
     "express": "^4.13.4",
     "mocha": "^5.2.0",
     "mongodb": "^3.2.7",
-    "mongoose": "^4.13.18"
+    "mongoose": "^5.7.5"
   },
   "publishConfig": {
     "registery": "http://localhost:8081/nexus/content/repositories/npm_ptivate/"
